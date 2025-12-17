@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="theme-color" content="#667eea">
+    
+  <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+    
+    <title>Nexcart | E-commerce Order & Payment System</title>
+    <link rel="stylesheet" href="stylep.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="site-header">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <span class="logo-icon">🛍️</span>
+                    Nexcart 
+                </h1>
+                <p class="site-tagline">Your Trusted E-commerce Platform</p>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs" role="tablist" aria-label="Order Process Navigation">
+            <button class="tab-btn active" data-tab="shopping" role="tab" aria-selected="true" aria-controls="shopping">
+                <span class="tab-icon">🛒</span>
+                <span class="tab-text">Cart</span>
+            </button>
+            <button class="tab-btn" data-tab="checkout" role="tab" aria-selected="false" aria-controls="checkout">
+                <span class="tab-icon">📝</span>
+                <span class="tab-text">Checkout</span>
+            </button>
+            <button class="tab-btn" data-tab="payment" role="tab" aria-selected="false" aria-controls="payment">
+                <span class="tab-icon">💳</span>
+                <span class="tab-text">Payment</span>
+            </button>
+            <button class="tab-btn" data-tab="tracking" role="tab" aria-selected="false" aria-controls="tracking">
+                <span class="tab-icon">📦</span>
+                <span class="tab-text">Tracking</span>
+            </button>
+            <button class="tab-btn" data-tab="invoice" role="tab" aria-selected="false" aria-controls="invoice">
+                <span class="tab-icon">📄</span>
+                <span class="tab-text">Invoice</span>
+            </button>
+        </nav>
+
+        <!-- Shopping Cart Tab -->
+        <section id="shopping" class="content active" role="tabpanel" aria-labelledby="shopping-tab">
+            <div class="section-header">
+                <h2>Our Products</h2>
+                <p class="section-subtitle">Browse our selection of quality electronics</p>
+            </div>
+            
+            <div class="products-grid">
+                <article class="product-card" data-product-id="1">
+                    <div class="product-image">📱</div>
+                    <div class="product-details">
+                        <h3 class="product-name">Wireless Headphones</h3>
+                        <p class="product-desc">Premium noise-cancelling audio</p>
+                        <div class="product-price">৳ 7,999</div>
+                        <button class="btn btn-primary" onclick="addToCart('Wireless Headphones', 7999)">
+                            <span class="btn-icon">+</span> Add to Cart
+                        </button>
+                    </div>
+                </article>
+                
+                <article class="product-card" data-product-id="2">
+                    <div class="product-image">⌚</div>
+                    <div class="product-details">
+                        <h3 class="product-name">Smart Watch</h3>
+                        <p class="product-desc">Track fitness & notifications</p>
+                        <div class="product-price">৳ 19,999</div>
+                        <button class="btn btn-primary" onclick="addToCart('Smart Watch', 19999)">
+                            <span class="btn-icon">+</span> Add to Cart
+                        </button>
+                    </div>
+                </article>
+                
+                <article class="product-card" data-product-id="3">
+                    <div class="product-image">🔌</div>
+                    <div class="product-details">
+                        <h3 class="product-name">USB-C Cable</h3>
+                        <p class="product-desc">Fast charging & data transfer</p>
+                        <div class="product-price">৳ 1,999</div>
+                        <button class="btn btn-primary" onclick="addToCart('USB-C Cable', 1999)">
+                            <span class="btn-icon">+</span> Add to Cart
+                        </button>
+                    </div>
+                </article>
+                
+                <article class="product-card" data-product-id="4">
+                    <div class="product-image">🔋</div>
+                    <div class="product-details">
+                        <h3 class="product-name">Power Bank</h3>
+                        <p class="product-desc">30,000 mAh capacity</p>
+                        <div class="product-price">৳ 4,999</div>
+                        <button class="btn btn-primary" onclick="addToCart('Power Bank', 4999)">
+                            <span class="btn-icon">+</span> Add to Cart
+                        </button>
+                    </div>
+                </article>
+                
+                <article class="product-card" data-product-id="5">
+                    <div class="product-image">🖥️</div>
+                    <div class="product-details">
+                        <h3 class="product-name">USB Hub</h3>
+                        <p class="product-desc">7-in-1 connectivity hub</p>
+                        <div class="product-price">৳ 3,999</div>
+                        <button class="btn btn-primary" onclick="addToCart('USB Hub', 3999)">
+                            <span class="btn-icon">+</span> Add to Cart
+                        </button>
+                    </div>
+                </article>
+                
+                <article class="product-card" data-product-id="6">
+                    <div class="product-image">📷</div>
+                    <div class="product-details">
+                        <h3 class="product-name">Camera Lens</h3>
+                        <p class="product-desc">Professional quality optics</p>
+                        <div class="product-price">৳ 29,999</div>
+                        <button class="btn btn-primary" onclick="addToCart('Camera Lens', 29999)">
+                            <span class="btn-icon">+</span> Add to Cart
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+            <div id="cart-display" class="cart-section">
+                <div class="cart-header">
+                    <h3>🛒 Your Shopping Cart</h3>
+                    <span class="cart-count" id="cartCount">0 items</span>
+                </div>
+                <div class="cart-items" id="cartItems"></div>
+                <div class="cart-summary" id="cartSummary"></div>
+                <button class="btn btn-primary btn-large" onclick="switchTab('checkout')" id="proceedBtn" disabled>
+                    Proceed to Checkout →
+                </button>
+            </div>
+        </section>
+
+        <!-- Checkout Tab -->
+        <section id="checkout" class="content" role="tabpanel" aria-labelledby="checkout-tab">
+            <div class="section-header">
+                <h2>Checkout</h2>
+                <p class="section-subtitle">Enter your delivery information</p>
+            </div>
+            
+            <form id="checkoutForm" class="checkout-form" novalidate>
+                <fieldset class="form-fieldset">
+                    <legend>Personal Information</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required autocomplete="given-name" placeholder="Enter your first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required autocomplete="family-name" placeholder="Enter your last name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="01XXXXXXXXX">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>Delivery Address</legend>
+                    <div class="form-group">
+                        <label for="address">Street Address <span class="required">*</span></label>
+                        <input type="text" id="address" name="address" required autocomplete="street-address" placeholder="House No, Road, Area">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City / District <span class="required">*</span></label>
+                            <input type="text" id="city" name="city" required autocomplete="address-level2" placeholder="e.g., Dhaka">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">Division / State <span class="required">*</span></label>
+                            <input type="text" id="state" name="state" required autocomplete="address-level1" placeholder="e.g., Dhaka Division">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postalCode">Postal Code <span class="required">*</span></label>
+                            <input type="text" id="postalCode" name="postalCode" required autocomplete="postal-code" placeholder="1234">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country <span class="required">*</span></label>
+                            <select id="country" name="country" required autocomplete="country">
+                                <option value="">Select Country</option>
+                                <option value="Bangladesh" selected>Bangladesh</option>
+                                <option value="India">India</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="Sri Lanka">Sri Lanka</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>Shipping Options</legend>
+                    <div class="form-group">
+                        <label for="shippingMethod">Delivery Method <span class="required">*</span></label>
+                        <select id="shippingMethod" name="shippingMethod" onchange="updateShippingCost()">
+                            <option value="0">📦 Standard Delivery (Free) - 5-7 days</option>
+                            <option value="200">🚚 Express Delivery (+৳ 200) - 2-3 days</option>
+                            <option value="500">⚡ Overnight Delivery (+৳ 500) - Next day</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orderNotes">Order Notes <span class="optional">(Optional)</span></label>
+                        <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Any special delivery instructions..."></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="switchTab('shopping')">← Back to Cart</button>
+                    <button type="button" class="btn btn-primary btn-large" onclick="validateAndProceed()">Continue to Payment →</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Payment Tab -->
+        <section id="payment" class="content" role="tabpanel" aria-labelledby="payment-tab">
+            <div class="section-header">
+                <h2>Payment</h2>
+                <p class="section-subtitle">Choose your preferred payment method</p>
+            </div>
+            <div id="paymentContent"></div>
+        </section>
+
+        <!-- Order Tracking Tab -->
+        <section id="tracking" class="content" role="tabpanel" aria-labelledby="tracking-tab">
+            <div class="section-header">
+                <h2>Order Tracking</h2>
+                <p class="section-subtitle">Track your order status in real-time</p>
+            </div>
+            <div id="trackingContent"></div>
+        </section>
+
+        <!-- Invoice Tab -->
+        <section id="invoice" class="content" role="tabpanel" aria-labelledby="invoice-tab">
+            <div class="section-header">
+                <h2>Invoice</h2>
+                <p class="section-subtitle">Your order summary and receipt</p>
+            </div>
+            <div id="invoiceContent"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Bangladesh Store. All rights reserved.</p>
+                <p class="footer-links">
+                    <a href="#privacy">Privacy Policy</a> |
+                    <a href="#terms">Terms of Service</a> |
+                    <a href="#contact">Contact Us</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="scriptp.js"></script>
+</body>
+</html>
