@@ -1,0 +1,314 @@
+/* ============================================
+   ORDER CONFIRMATION PAGE STYLES
+   ============================================
+   Used on: public/order_confirmation.php
+   ============================================ */
+
+/* ============================================
+   INVOICE STYLES
+   ============================================ */
+.invoice {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+}
+
+.invoice-header {
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.invoice-title {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.invoice-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.invoice-section-title {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.invoice-section {
+    background: var(--bg-light);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.invoice-brand {
+    flex: 1;
+}
+
+.invoice-company {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.invoice-info {
+    text-align: right;
+}
+
+/* Order ID styling */
+.order-id {
+    font-family: 'Courier New', monospace;
+    background: var(--bg-gray);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ============================================
+   INVOICE ITEMS TABLE
+   ============================================ */
+.invoice-items {
+    margin: var(--spacing-xl) 0;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.invoice-table th {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+}
+
+.invoice-table th:first-child {
+    border-radius: var(--radius-md) 0 0 0;
+}
+
+.invoice-table th:last-child {
+    border-radius: 0 var(--radius-md) 0 0;
+}
+
+.invoice-table td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.invoice-table tbody tr:hover {
+    background: var(--bg-light);
+}
+
+.invoice-table .amount {
+    text-align: right;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ============================================
+   INVOICE TOTALS
+   ============================================ */
+.invoice-total {
+    text-align: right;
+    padding-top: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    border-top: 3px solid var(--primary-color);
+}
+
+.invoice-total-amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================
+   PAYMENT INFO
+   ============================================ */
+.invoice-payment-info {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-lg);
+}
+
+/* ============================================
+   ORDER TRACKING
+   ============================================ */
+.tracking-info {
+    background: var(--bg-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-xl);
+    border-left: 4px solid var(--primary-color);
+}
+
+.tracking-info p {
+    margin: var(--spacing-sm) 0;
+    color: var(--text-primary);
+}
+
+.tracking-details-grid {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.tracking-details-grid p {
+    margin: 0;
+}
+
+.tracking-timeline {
+    position: relative;
+    padding: var(--spacing-lg) 0;
+}
+
+.timeline-step {
+    display: flex;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.timeline-step::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 55px;
+    width: 3px;
+    height: calc(100% + 10px);
+    background: var(--border-color);
+    border-radius: 2px;
+}
+
+.timeline-step.completed::before {
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+}
+
+.timeline-step:last-child::before {
+    display: none;
+}
+
+.timeline-marker {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-light);
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    transition: all var(--transition-normal);
+}
+
+.timeline-step.completed .timeline-marker {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.timeline-content {
+    margin-left: var(--spacing-xl);
+    padding-top: var(--spacing-xs);
+}
+
+.timeline-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+}
+
+.timeline-time {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.timeline-status {
+    margin-top: var(--spacing-sm);
+}
+
+.timeline-step.completed .timeline-title {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   INVOICE FOOTER
+   ============================================ */
+.invoice-footer {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (ORDER PAGE)
+   ============================================ */
+@media (max-width: 768px) {
+    .invoice {
+        padding: var(--spacing-lg);
+    }
+
+    .invoice-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .invoice-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .invoice {
+        padding: var(--spacing-md);
+    }
+
+    .invoice-table {
+        font-size: 0.85rem;
+    }
+
+    .invoice-table th,
+    .invoice-table td {
+        padding: var(--spacing-sm);
+    }
+
+    .invoice-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* ============================================
+   PRINT STYLES (ORDER PAGE)
+   ============================================ */
+@media print {
+    .invoice {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+}
