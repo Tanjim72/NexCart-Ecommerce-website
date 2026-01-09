@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "Smartphone",
+        "category": "Electronics",
+        "brand": "Samsung",
+        "price": 40000,
+        "rating": 4.5,
+        "stock": 20,
+        "image": "images\/smartphone.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Laptop",
+        "category": "Electronics",
+        "brand": "Dell",
+        "price": 80000,
+        "rating": 4.7,
+        "stock": 3,
+        "image": "images\/laptop.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Shoes",
+        "category": "Fashion",
+        "brand": "Nike",
+        "price": 12000,
+        "rating": 4.2,
+        "stock": 30,
+        "image": "images\/shoes.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Watch",
+        "category": "Fashion",
+        "brand": "Fossil",
+        "price": 20000,
+        "rating": 4.3,
+        "stock": 24,
+        "image": "images\/watch.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Headphones",
+        "category": "Electronics",
+        "brand": "Sony",
+        "price": 15000,
+        "rating": 4.4,
+        "stock": 10,
+        "image": "images\/headphones.jpg"
+    }
+]
