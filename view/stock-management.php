@@ -11,7 +11,7 @@ $products = json_decode(file_get_contents('data/products.json'), true);
 
 <h1>Stock Management</h1>
 <table border="1" cellpadding="10">
-<tr><th>Name</th><th>Price (৳)</th><th>Stock</th></tr>
+<tr><th>Name</th><th>Price (BDT)</th><th>Stock</th></tr>
 <?php foreach($products as $p): ?>
 <tr>
 <td><?= $p['name'] ?></td>
