@@ -1,0 +1,20 @@
+{
+  "app": {
+    "name": "NexCart-Ecommerce-website",
+    "login": {
+      "redirect_success": "profile.php",
+      "error_messages": {
+        "empty_fields": "All fields are required!",
+        "invalid_credentials": "Invalid email or password!"
+      }
+    }
+  },
+  "users": [
+    {
+      "name": " User",
+      "email": "user@example.com",
+      "password": "123456",
+      "role": "customer"
+    }
+  ]
+}
