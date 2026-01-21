@@ -1,0 +1,8 @@
+{
+ "status": "success",
+ "message": "Registration successful! You can login now.",
+ "user": {
+   "name": "Your Name Here",
+   "email": "your@email.com"
+ }
+}
